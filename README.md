@@ -3,7 +3,7 @@
 A support chatbot for [Arabish Academy](https://thearabish.com/), an online academy that teaches Arabic and English.
 Students can ask about courses, prices, refunds or anything else, and the bot answers **only from the academy's real FAQ**, so it doesn't make things up.
 
-**Live demo:** LIVE_DEMO_URL
+**Live demo:** https://arabish-ai-assistant.vercel.app
 
 ![Chat about refunds and kids classes](docs/screenshots/chat-desktop.png)
 
@@ -80,6 +80,12 @@ cd client
 npm install
 npm run dev               # http://localhost:5173
 ```
+
+## Deployment
+
+The app is one Vercel project with `server/` as the root folder.
+`npm run build` builds the React app into `server/public`, and Express serves it together with the `/api` routes, so everything runs on one URL.
+Every push to `main` deploys automatically.
 
 ## API
 
