@@ -14,17 +14,21 @@ type ChatResponse = {
   sources: Source[];
 };
 
+// safety limit so the model can't call the tool forever
 const MAX_TOOL_ROUNDS = 3;
 
+// rules for the assistant
 const instructions = `You are the support assistant for Arabish Academy, an online academy that teaches Arabic and English.
 - Reply to greetings and small talk directly, without calling any tool.
 - For ANY question about Arabish Academy, call search_faq first.
 - Answer ONLY from search_faq results. Keep answers short and friendly.
+- You may use simple Markdown (bold, bullet or numbered lists, links) when it makes the answer clearer. Do not use headings or tables.
 - If search_faq returns nothing relevant, say you don't have that information and suggest contacting the academy through the website.
 - Politely refuse questions unrelated to Arabish Academy.
 - Reply in the same language the user writes in.`;
 
-// If our tool schema don't align with the structure defined by OpenAI Responses API we got an error in advance on tool making.
+// the one tool the model can use: search our FAQ
+// (strict: true makes OpenAI check this schema for us)
 const tools: OpenAI.Responses.FunctionTool[] = [
   {
     type: "function",
@@ -37,7 +41,7 @@ const tools: OpenAI.Responses.FunctionTool[] = [
         query: {
           type: "string",
           description:
-            "The user's question, rewritten as a clear search query in English",
+            "The topic of the user's question as a short English search query, e.g. 'lesson prices and fees' or 'refund policy'. Do NOT include the academy name: every FAQ is about the academy, so the name only hides the right answer.",
         },
       },
       required: ["query"],
@@ -47,6 +51,21 @@ const tools: OpenAI.Responses.FunctionTool[] = [
   },
 ];
 
+// send something to the model and get its response
+function askModel(
+  input: OpenAI.Responses.ResponseInput | string,
+  previousResponseId: string | null,
+) {
+  return openai.responses.create({
+    model: CHAT_MODEL,
+    instructions,
+    tools,
+    input,
+    // this id lets the model remember the earlier chat
+    previous_response_id: previousResponseId,
+  });
+}
+
 export async function handleChat(
   message: string,
   previousResponseId?: string,
@@ -54,19 +73,16 @@ export async function handleChat(
   let usedTools = false;
   const sources: Source[] = [];
 
-  let response = await openai.responses.create({
-    model: CHAT_MODEL,
-    instructions,
-    tools,
-    input: message,
-    previous_response_id: previousResponseId ?? null,
-  });
+  // first, send the user's message
+  let response = await askModel(message, previousResponseId ?? null);
 
+  // if the model asks for search_faq, run it and send back the results
   for (let round = 0; round < MAX_TOOL_ROUNDS; round++) {
     const calls = response.output.filter(
       (item) => item.type === "function_call",
     );
 
+    // no tool calls means the model has the final answer
     if (calls.length === 0) break;
 
     usedTools = true;
@@ -76,12 +92,10 @@ export async function handleChat(
         const { query } = JSON.parse(call.arguments);
         const results = await searchFAQ(query);
 
-        sources.push(
-          ...results.map((result) => ({
-            question: result.question,
-            score: result.score,
-          })),
-        );
+        // save sources so the UI can show them
+        for (const result of results) {
+          sources.push({ question: result.question, score: result.score });
+        }
 
         return {
           type: "function_call_output" as const,
@@ -91,13 +105,7 @@ export async function handleChat(
       }),
     );
 
-    response = await openai.responses.create({
-      model: CHAT_MODEL,
-      instructions: instructions,
-      tools: tools,
-      input: outputs,
-      previous_response_id: response.id,
-    });
+    response = await askModel(outputs, response.id);
   }
 
   return {

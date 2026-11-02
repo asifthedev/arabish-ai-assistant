@@ -1,8 +1,33 @@
-import { Router } from "express";
-import { handleChat } from "./services/chat.js";
+import express, { type ErrorRequestHandler } from "express";
+import { chatRouter } from "./routes/chat.js";
 
-const chatRouter = Router();
+const app = express();
+const PORT = Number(process.env.PORT) || 3000;
 
-chatRouter.get("/", (req, res) => {
-  const { message, previousResponseId} = ;
+// read JSON from the request body
+app.use(express.json());
+
+// simple check to see if the server is up
+app.get("/api/health", (_req, res) => {
+  res.json({ ok: true });
 });
+
+app.use("/api/chat", chatRouter);
+
+// if anything throws, log it and send a friendly message instead
+const errorHandler: ErrorRequestHandler = (err, _req, res, _next) => {
+  console.error(err);
+  res.status(500).json({ error: "Something went wrong. Please try again." });
+};
+
+app.use(errorHandler);
+
+// Vercel runs the app itself, so we only listen when running locally
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+  });
+}
+
+// Vercel needs the app as the default export
+export default app;

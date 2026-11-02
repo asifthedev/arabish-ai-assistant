@@ -25,7 +25,7 @@
   },
   {
     "question": "Do you teach children, adults, or both?",
-    "answer": "Our courses are available to learners of different ages. Please contact us to confirm the available classes for your age group."
+    "answer": "Yes, we teach children, teens and adults. Lessons for children are short, friendly and interactive. Students under 18 need a parent or guardian to book and pay for them, and parents of young children are encouraged to stay nearby during lessons."
   },
   {
     "question": "Are the lessons conducted online?",
@@ -41,6 +41,138 @@
   },
   {
     "question": "How do I contact the academy if I need help?",
-    "answer": "You can contact us through the contact details provided on our website. We will be happy to assist you."
+    "answer": "You can email us at info@thearabish.com, or call or message us on WhatsApp at +233 53 544 3512. We reply fast on WhatsApp."
+  },
+  {
+    "question": "What courses do you offer?",
+    "answer": "We offer four courses: Quranic Arabic, Conversational Arabic, Spoken English, and Grammar (Arabic and English). Pick your goal and your tutor builds the lessons around it."
+  },
+  {
+    "question": "What is the Quranic Arabic course?",
+    "answer": "The Quranic Arabic course helps you read the Quran and understand what you recite. It covers Arabic grammar (Nahw and Sarf), Quranic vocabulary, and reading and comprehension. It is best for children and adults who want to understand the Quran."
+  },
+  {
+    "question": "What is the Conversational Arabic course?",
+    "answer": "The Conversational Arabic course helps you speak Arabic in everyday life with confidence. It covers conversation practice, listening and pronunciation, and real-life situations. It is best for travel, work and family conversations."
+  },
+  {
+    "question": "What is the Spoken English course?",
+    "answer": "The Spoken English course helps you speak English clearly at school, at work and abroad. It covers daily conversation, pronunciation, and business and travel English. It is best for interviews, study abroad and career growth."
+  },
+  {
+    "question": "What is the Grammar course?",
+    "answer": "The Grammar course builds a strong base in Arabic or English grammar, with clear rules and examples, writing practice, and school and exam support. It is best for students preparing for school exams."
+  },
+  {
+    "question": "Are the lessons one-to-one or in a group?",
+    "answer": "All lessons are live and one-to-one. Your tutor focuses only on you."
+  },
+  {
+    "question": "Which platform do you use for lessons?",
+    "answer": "Every lesson is a live Google Meet call with your tutor. You can join from a phone, tablet or laptop, the tutor can share the screen for books and exercises, and there is no app to learn: you just click the link."
+  },
+  {
+    "question": "What do I need for a lesson?",
+    "answer": "You need a phone, tablet or computer with a camera and microphone, a stable internet connection, and a quiet place to learn."
+  },
+  {
+    "question": "Is the trial class really free?",
+    "answer": "Yes. Book a free trial class, meet your tutor and see how lessons work. No payment is needed for the trial; you pay only when you choose a plan."
+  },
+  {
+    "question": "How do I get started?",
+    "answer": "Start in 3 easy steps: 1) Book a free trial by picking a day and time in our booking calendar. 2) Meet your tutor, who checks your level and makes your learning plan. 3) Choose a 1, 4 or 6-month plan and pay online. You can have your first class this week."
+  },
+  {
+    "question": "How much do the lessons cost?",
+    "answer": "All plans include 4 live one-to-one classes per week. 1-Month Plan: $64 per month (16 classes, $4 per class). 4-Month Plan: $256, billed once (64 classes). 6-Month Plan: $336 (96 classes, $3.50 per class). All prices are in US dollars (USD)."
+  },
+  {
+    "question": "How many classes do I get per week?",
+    "answer": "Every plan includes 4 live one-to-one classes per week."
+  },
+  {
+    "question": "Which plan should I choose?",
+    "answer": "Start with the 1-Month Plan if you are new. Choose the 6-Month Plan for the lowest price per class ($3.50). It is our most popular plan and gives you enough time to see real results."
+  },
+  {
+    "question": "What is included in each plan?",
+    "answer": "Every plan includes 4 live one-to-one classes per week on Google Meet and a free learning e-book guide."
+  },
+  {
+    "question": "What currency are your prices in?",
+    "answer": "All prices are in US dollars (USD)."
+  },
+  {
+    "question": "How do I pay, and is online payment safe?",
+    "answer": "You pay securely online by credit or debit card (Visa or Mastercard). Payments are processed by Paystack, a secure payment provider, and we never see or store your card details."
+  },
+  {
+    "question": "Do you offer a money-back guarantee?",
+    "answer": "Yes. If you are not happy after your first week, you can get your money back. For monthly packages, you get a full refund if you cancel within 7 days of purchase before your first lesson. See our Refund Policy for full details."
+  },
+  {
+    "question": "What if I miss a class or need to reschedule?",
+    "answer": "Tell us at least 24 hours before your class and we will move it to another time free of charge. Cancellations with less than 24 hours notice, or no-shows, may be counted as a lesson taken."
+  },
+  {
+    "question": "What happens if I am late for a class?",
+    "answer": "If you are more than 15 minutes late without telling us, the lesson may be treated as missed."
+  },
+  {
+    "question": "Can I get a refund on a monthly package after lessons have started?",
+    "answer": "Yes, you can request a refund for lessons not yet taken. Lessons already taken are charged at the standard single-lesson rate, and the difference is refunded. Unused lessons expire at the end of the package month and are not refundable, unless they were missed because of us."
+  },
+  {
+    "question": "What is the refund policy for single lessons?",
+    "answer": "If you cancel with 24 hours notice or more, you get a full refund or free rescheduling. If you cancel with less than 24 hours notice or do not show up, there is no refund. If we cancel, we will reschedule at a time that suits you or give a full refund."
+  },
+  {
+    "question": "What if a lesson fails because of technical problems?",
+    "answer": "If a lesson cannot take place because of a problem on our side, we will offer a replacement lesson or a refund. Problems with your own internet or device are not eligible for a refund, but we will try to help you reschedule."
+  },
+  {
+    "question": "How do I request a refund?",
+    "answer": "Email us at info@thearabish.com or message us on WhatsApp at +233 53 544 3512 with your name, the email or number you used to book, and the reason for your request. We aim to reply within 2 business days."
+  },
+  {
+    "question": "How long does a refund take?",
+    "answer": "Approved refunds go back to your original payment method and normally arrive within 5 to 10 business days, depending on your bank or card issuer."
+  },
+  {
+    "question": "Do unused lessons expire?",
+    "answer": "Yes. Unused lessons in a monthly package expire at the end of the package month, unless we agree otherwise or the lessons were missed because of us."
+  },
+  {
+    "question": "Can I choose a class time that suits my time zone?",
+    "answer": "Yes. Our schedule is flexible and we set class times that suit your time zone. Please check your time zone carefully when booking."
+  },
+  {
+    "question": "Where is Arabish Academy based?",
+    "answer": "Arabish Academy is based in Ghana and teaches students in Ghana and internationally. Because lessons are online, you can join from any country."
+  },
+  {
+    "question": "Who are the tutors?",
+    "answer": "Our tutors are qualified and experienced in teaching English and Arabic. Your tutor checks your level, builds your learning plan and tracks your progress."
+  },
+  {
+    "question": "How will I know I am making progress?",
+    "answer": "Your tutor tracks your progress and builds the lessons around your goal, so you can see how you are improving."
+  },
+  {
+    "question": "Are the lessons recorded?",
+    "answer": "No. Lessons are not recorded without your agreement."
+  },
+  {
+    "question": "Do you guarantee results?",
+    "answer": "We teach to the best of our ability, but progress depends on many things, including practice and attendance, so we cannot guarantee specific results, grades or fluency levels."
+  },
+  {
+    "question": "How many students have you taught?",
+    "answer": "We have taught 300+ students from 100+ countries and given 4000+ live lessons. We are rated 5.0 on Google."
+  },
+  {
+    "question": "Is the website available in Arabic?",
+    "answer": "Yes. You can switch the website to Arabic using the language option at the top of the page, or visit thearabish.com/ar."
   }
 ]

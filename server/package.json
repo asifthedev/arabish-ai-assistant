@@ -4,11 +4,12 @@
   "description": "An AI chatbot uses AI agents to answer user questions",
   "author": "Asif Shahzad",
   "type": "module",
-  "main": "server.js",
+  "main": "src/server.ts",
   "scripts": {
-    "dev": "npx tsx --watch src/server.ts",
+    "dev": "npx tsx --watch --env-file=.env src/server.ts",
     "check-clients": "npx tsx --env-file=.env scripts/check-clients.ts",
-    "create-index": "npx tsx --env-file=.env scripts/create-index.ts"
+    "create-index": "npx tsx --env-file=.env scripts/create-index.ts",
+    "ingest": "npx tsx --env-file=.env scripts/ingest.ts"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
