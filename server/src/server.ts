@@ -1,4 +1,5 @@
 import express, { type ErrorRequestHandler } from "express";
+import { fileURLToPath } from "node:url";
 import { chatRouter } from "./routes/chat.js";
 
 const app = express();
@@ -13,6 +14,10 @@ app.get("/api/health", (_req, res) => {
 });
 
 app.use("/api/chat", chatRouter);
+
+// serve the React build (made by `npm run build`)
+const publicFolder = fileURLToPath(new URL("../public", import.meta.url));
+app.use(express.static(publicFolder));
 
 // if anything throws, log it and send a friendly message instead
 const errorHandler: ErrorRequestHandler = (err, _req, res, _next) => {
